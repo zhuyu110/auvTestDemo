@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/ensure"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="确定"
+        android:visibility="gone" />
+
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="门号"
+        android:inputType="number"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip"
+        android:layout_marginTop="20.0dip"
+        android:orientation="horizontal"
+        android:focusable="false"
+        android:focusableInTouchMode="false">
+
+        <EditText
+            android:id="@+id/MainTotalCell"
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:hint="请输入总柜子数"
+            android:inputType="number"
+
+            android:paddingLeft="15.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="柜子总数" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip"
+        android:layout_marginTop="20.0dip"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/SecondTotalCell"
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:hint="请输入副板柜位数"
+            android:inputType="number"
+            android:paddingLeft="15.0dip"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="副板柜位数"
+           />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip"
+        android:layout_marginTop="20.0dip"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/SecondTotalCellCount"
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:hint="请输入副板板数"
+            android:inputType="number"
+            android:paddingLeft="15.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="副板板数" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:id="@+id/modifyCellTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="保存" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="#ff131313" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip"
+        android:layout_marginTop="20.0dip"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/openAndClosePort"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="打开/关闭串口"
+           />
+
+        <EditText
+            android:id="@+id/serialPortName"
+            android:layout_width="200.0dip"
+            android:layout_height="wrap_content"
+            android:hint="串口"
+            android:inputType="text"
+            android:paddingLeft="15.0dip"
+           />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设备串号"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40.0dip"
+        android:layout_marginTop="20.0dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/openDoor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="开始测试" />
+        <TextView
+            android:layout_marginLeft="20pt"
+            android:id="@+id/successCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成功数："/>
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:id="@+id/failCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="失败数："/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:id="@+id/quite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="退出" />
+    </LinearLayout>
+
+</LinearLayout>
