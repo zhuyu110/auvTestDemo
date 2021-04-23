@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             });*/
-                            msleep(1000);
+                            msleep(650);
                             if(!isResult){
                                 failCount++;
                                 MainActivity.this.runOnUiThread(new Runnable() {

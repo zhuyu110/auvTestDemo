@@ -201,7 +201,7 @@ public class AUVCellController {
             v1_1[4]=DataUtils.HexToByte(DataUtils.getBCC(v1_1));
             Log.i(TAG, "crc16_data:" + DataUtils.ByteArrToHex(v1_1));
             write(v1_1);
-            msleep(1000);
+            msleep(550);
         } catch (Exception e) {
             e.printStackTrace();
         }
