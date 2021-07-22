@@ -32,6 +32,14 @@ android {
 
     }
 
+    packagingOptions {
+        exclude 'META-INF/*'
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
+    }
+
+
 }
 
 dependencies {
@@ -45,4 +53,5 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation 'org.jetbrains:annotations:15.0'
+    implementation  'com.azhon:serialport:1.0.0'
 }

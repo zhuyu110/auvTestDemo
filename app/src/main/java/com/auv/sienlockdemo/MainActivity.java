@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         this.isOpenPort=Boolean.TRUE;
-        LockControlBoardUtils.getInstances().openSerialPort();
+        LockControlBoardUtils.getInstances().onDeviceStateChange();
         this.openAndClosePort.setText("关闭串口");
     }
     private double deciMal(int top, int below) {
@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
                             if(!bOpen){
                                 break;
                             }
-                            AUVCellController.getInstance(getApplication()).openDoor(i+1);
+                            LockControlBoardUtils.getInstances().openDoor(i+1);
+                            //AUVCellController.getInstance(getApplication()).openDoor(i+1);
                             /*LockControlBoardUtils.OpenCell(i+1, new LockControlBoardUtils.OpenDoorCallBack() {
                                 public void fail(String param1String) {
                                     Log.d(MainActivity.this.TAG, "fail: ");
@@ -160,33 +161,21 @@ public class MainActivity extends AppCompatActivity {
             v0_1.printStackTrace();
         }
     }
-    private void openDoorAll() {
-        this.isFinish=false;
-        LockControlBoardUtils.OpenCell(0, new LockControlBoardUtils.OpenDoorCallBack() {
-            public void fail(String param1String) {
-                Log.d(MainActivity.this.TAG, "fail: ");
-                MainActivity.this.isFinish=true;
-                showToast(param1String);
-            }
 
-            public void success(boolean param1Boolean) {
-                Log.d(MainActivity.this.TAG, "success: ");
-                showToast(param1Boolean ? "打开成功" : "打开失败");
-            }
-        });
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        AUVCellController.getInstance(this).initUsbControl();
-        AUVCellController.getInstance(this).onDeviceStateChange();
+
+//        AUVCellController.getInstance(this).initUsbControl();
+//        AUVCellController.getInstance(this).onDeviceStateChange();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        AUVCellController.getInstance(this).onPause();
+        LockControlBoardUtils.getInstances().closeSerialPort();
+       // AUVCellController.getInstance(this).onPause();
     }
 
     @Override
